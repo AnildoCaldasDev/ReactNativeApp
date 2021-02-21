@@ -3,6 +3,7 @@ import React, {Component} from 'react';
 import {StyleSheet, ScrollView, View, Text} from 'react-native';
 
 import {Colors} from 'react-native/Libraries/NewAppScreen';
+//https://reactjs.org/docs/lists-and-keys.html#keys
 
 export class PostList extends Component {
   render() {
@@ -19,8 +20,8 @@ export class PostList extends Component {
 
     return (
       <ScrollView style={styles.container}>
-        {posts.map((p) => (
-          <View style={styles.postContainer}>
+        {posts.map((p, index) => (
+          <View key={index} style={styles.postContainer}>
             <Text style={styles.postTitle}>{p.title}</Text>
             <Text style={styles.postDescription}>{p.description}</Text>
           </View>
